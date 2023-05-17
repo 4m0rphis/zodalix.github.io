@@ -18,9 +18,39 @@
     }
   </style>
   <body class="main">
-    <img src="brucewayne.jpg" alt="Bruce Wayne (aka. Batman)" width="1014" height="748"> 
-    <h2 class="text">You've been batman-ed!</h2>
-        
+    <script type="text/javascript">
+      function randomElement(array) { return array[Math.floor(Math.random()*array.length)] }
+      
+      const pictures = [["brucewayne.jpg",1014,748], ["batman.jpg",852,748]]
+      const phrases = ["You've been batman-ed!", "Batman has got you once again!", "Batman is here to give you a prize after he have catched you!"]
+      
+      const selected_picture = randomElement(pictures)
+      const selected_phrase = randomElement(phrases)
+
+      function toHTML() {
+          var image = document.createElement("img")
+          image.src = selected_picture[0]
+          image.alt = selected_phrase
+          
+          image.width = selected_picture[1]
+          image.height = selected_picture[2]
+
+          var text = document.createElement("h2")
+          text.innerHTML = selected_phrase
+          text.classList.add("text")
+          
+          return [image,text]
+      }
+      
+        const htmlResult = toHTML()
+
+      document.body
+        .appendChild(htmlResult[0])
+      document.body  
+        .appendChild(htmlResult[1])
+    </script>
+
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="color:hotpink"><h1>Click here to claim your well deserved prize!</h1></a>
+
   </body>
 </html>
