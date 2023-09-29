@@ -1,13 +1,74 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Welcome</title>
+    <title>zodalix.me</title>
+    <style>
+      .text {
+        color: white;
+        display: block
+      }
+      
+      body {
+        background-color: black;
+        margin-left: auto;
+        margin-right: auto;
+
+        display: block;
+        text-align: center;
+      }
+
+
+      footer{
+          margin-top: auto;
+      }
+
+      img {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    </style>
   </head>
   <body>
-    <h2>This website is not ready at all, S is currently working on it.</h2>
-    <h3>Whlist you're still here, enjoy a cookie! 🍪</h3>
- 
-    <button onclick="location.href='https://zodalix.me/batman'" type="button">
-      Batman!</button>
+    <h1 class="text">Hi, I'm S.S.</h1>
+    <p class="text" style="color:yellowgreen"><i>This basic Web 1.0 page is all I can do... ¯\_(ツ)_/¯</i></p>
+    <p class="text">Do note though, this is only a temporary solution and I will remake it once I have an idea of what to put here...</p>
+
+      <p class="text">My blog: <a href="https://i11l.blog/novastosha" style="color: cornflowerblue;">https://i11l.blog/novastosha</a> <i>(ty Midka)</i></p>
+      <p class="text">My socials</p>
+    
+      <script type="text/javascript">
+        const socials = [["discord.png","Discord","earthspecie","cornflowerblue"]] 
+
+        socials.forEach(function (social,index) { // automating this is really useless, but it's here
+            const div = document.createElement('div')
+          
+            const socialElement = document.createElement('div')
+            
+            
+            var image = document.createElement("img")
+            image.src = "./socials/"+social[0]
+            image.alt = social[1]
+            image.width = 30
+            image.height = 30
+            
+
+            socialElement.appendChild(image)
+
+            var text = document.createElement('a')
+            text.innerHTML = social[1]+`: <a style="color: ${social[3]}">${social[2]}</a>`
+            text.classList.add("text")
+
+            socialElement.appendChild(text)
+            div.appendChild(socialElement)
+            document.body.appendChild(div)
+        })
+      </script>
+
+      <h2><a href="https://zodalix.me/batman" style="color: hotpink;"><i>I wonder where does this take you?</i></a></h2>
+
+
+    <footer>    
+      <h5 class="text">You're one of my mates? Shush! No one has to hear about all of this...</h3>
+    </footer>
   </body>
 </html>
